@@ -1,0 +1,33 @@
+#include<iostream>
+#include<cstdio>
+int match_found(int ar[],int p)
+{
+int i;
+for(i=11;i>=0;i--)
+{
+if(ar[i]<=p)
+{return ar[i];break;}
+ 
+}
+ 
+}
+int main()
+{
+int count,i,ar[]={1,2,4,8,16,32,64,128,256,512,1024,2048},t,p,x;
+scanf("%d",&t);
+while(t--)
+{
+count=0;
+scanf("%d",&p);
+while(p!=0)
+{
+x=match_found(ar,p);
+count=count+p/x;
+p=p%x;
+}
+printf("%d\n",count);
+}
+return 0;
+}
+ 
+
